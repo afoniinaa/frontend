@@ -18,4 +18,5 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY }}
           script: |
             cd /var/frontend/frontend
-            docker compose up -d
+            git pull
+            docker compose up -d --build
