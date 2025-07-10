@@ -1,0 +1,21 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Deploy services
+        uses: appleboy/ssh-action@master
+        with:
+          host: test.qcasa.ru
+          username: root
+          key: ${{ secrets.DEPLOY_KEY }}
+          script: |
+            cd /var/frontend/frontend
+            docker compose up -d
