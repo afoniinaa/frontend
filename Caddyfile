@@ -1,0 +1,3 @@
+test.qcasa.ru {
+    reverse_proxy frontend:80
+}

@@ -7,7 +7,22 @@ services:
       dockerfile: Dockerfile
     ports:
       - "80:80"
-    volumes:
-      - .:/app
     environment:
       - NODE_ENV=production
+
+  caddy:
+    image: caddy:latest
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - frontend
+
+volumes:
+  caddy_data:
+  caddy_config:
