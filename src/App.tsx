@@ -25,7 +25,7 @@ function App() {
         </p>
       </div>
       <p className="text-red read-the-docs">
-        DOCKER 4
+        DOCKER 5
       </p>
     </>
   )
