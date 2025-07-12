@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import './index.css'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,8 +25,8 @@ function App() {
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
-      <p className="text-red read-the-docs">
-        DOCKER 5
+      <p className="text-red-500 fornt-bold read-the-docs">
+        DOCKER 7
       </p>
     </>
   )
